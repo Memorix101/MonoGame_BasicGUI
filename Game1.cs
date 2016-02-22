@@ -64,7 +64,7 @@ namespace BasicGUI
             base.Update(gameTime);
         }
 
-        void OnGUI(SpriteBatch spriteBatch)
+        void OnGUI()
         {
             GUI.Init(spriteBatch);
             GUI.Text(new Rectangle(10, 10, 0, 0), "Test");
@@ -90,7 +90,7 @@ namespace BasicGUI
             mousePos = new Vector2(Mouse.GetState().X - Window.Position.X - mouseTexture.Width/2, Mouse.GetState().Y - Window.ClientBounds.Top);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, null);
-            OnGUI(spriteBatch);
+            OnGUI();
             spriteBatch.Draw(mouseTexture, mousePos, Color.White);
             spriteBatch.End();
 
