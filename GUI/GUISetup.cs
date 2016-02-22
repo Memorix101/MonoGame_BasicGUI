@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace BasicGUI
 {
-    public static class Setup
+    public static class GUISetup
     {
         private static ContentManager c;
         private static GraphicsDeviceManager g;

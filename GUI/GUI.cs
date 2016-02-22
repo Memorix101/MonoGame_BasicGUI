@@ -16,7 +16,7 @@ namespace BasicGUI
 
         static GUI()
         {            
-            font = Setup.ContentDevice.Load<SpriteFont>("Ubuntu-B");
+            font = GUISetup.ContentDevice.Load<SpriteFont>("Ubuntu-B");
           //  texture = Setup.ContentDevice.Load<Texture2D>("bar");
         }        
 
@@ -36,7 +36,7 @@ namespace BasicGUI
         public static void Box(Rectangle rect, string t)
         {
             Color color = Color.White;
-            Texture2D texture = Setup.ContentDevice.Load<Texture2D>("blue_panel"); 
+            Texture2D texture = GUISetup.ContentDevice.Load<Texture2D>("blue_panel"); 
             text = t;
             position = new Vector2(rect.Location.X + rect.Width/2f - font.MeasureString(t).X / 2f, rect.Location.Y + rect.Height/2f - font.MeasureString(t).Y / 2f);
             batch.Draw(texture, rect, Color.White);
@@ -46,8 +46,8 @@ namespace BasicGUI
         public static bool Button(Rectangle rect, string t, Rectangle mouseRect)
         {
             Color color = Color.White;
-            Texture2D texture_normal = Setup.ContentDevice.Load<Texture2D>("blue_button_normal");
-            Texture2D texture_press = Setup.ContentDevice.Load<Texture2D>("blue_button_press");
+            Texture2D texture_normal = GUISetup.ContentDevice.Load<Texture2D>("blue_button_normal");
+            Texture2D texture_press = GUISetup.ContentDevice.Load<Texture2D>("blue_button_press");
             text = t;
             position = new Vector2(rect.Location.X + rect.Width / 2f - font.MeasureString(t).X / 2f, rect.Location.Y + rect.Height / 2f - font.MeasureString(t).Y / 2f);
 
@@ -88,7 +88,7 @@ namespace BasicGUI
 
         public static void Load(string path)
         {
-            font = Setup.ContentDevice.Load<SpriteFont>(path);
+            font = GUISetup.ContentDevice.Load<SpriteFont>(path);
         }
 
     }

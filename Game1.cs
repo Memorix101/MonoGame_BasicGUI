@@ -26,15 +26,15 @@ namespace BasicGUI
         {
             graphics = new GraphicsDeviceManager(this);
        
-           //  graphics.PreferredBackBufferHeight = 720;
-            //  graphics.PreferredBackBufferWidth = 1280;
+           //graphics.PreferredBackBufferHeight = 720;
+           //graphics.PreferredBackBufferWidth = 1280;
 
             Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
-            Setup.Init(Content, graphics, this);
+            GUISetup.Init(Content, graphics, this);
             this.IsMouseVisible = false;
             base.Initialize();
         }
@@ -46,8 +46,6 @@ namespace BasicGUI
 
             mouseTexture = Content.Load<Texture2D>("cursor_glossy");
             you_win = Content.Load<SoundEffect>("you_win");
-
-            // TODO: use this.Content to load your game content here
         }
 
         protected override void UnloadContent()
@@ -69,7 +67,7 @@ namespace BasicGUI
         void OnGUI(SpriteBatch spriteBatch)
         {
             GUI.Init(spriteBatch);
-            GUI.Text(new Rectangle(0, 0, 0, 0), "Test");
+            GUI.Text(new Rectangle(10, 10, 0, 0), "Test");
             GUI.Text(new Rectangle(15, 200, 0, 0), "WOW !");
             GUI.Box(new Rectangle(500, 150, 100, 100), "BOOOX !");
 
