@@ -35,6 +35,8 @@ http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
             {
                 sound1.Play();
             }
+            
+            GUILayout.Space(1);
 
             if (GUILayout.Button("Button2"))
             {
