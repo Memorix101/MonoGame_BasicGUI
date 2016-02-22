@@ -17,10 +17,9 @@ namespace BasicGUI
         Rectangle mouseRect;
         Vector2 mousePos;
         Texture2D mouseTexture;
+        MouseState mouseState;
 
         SoundEffect you_win;
-
-        MouseState lastMouse;
 
         public Game1()
         {
@@ -34,7 +33,7 @@ namespace BasicGUI
 
         protected override void Initialize()
         {
-            GUISetup.Init(Content, graphics, this);
+            GUISetup.Init(Content, graphics, this, mouseState);
             this.IsMouseVisible = false;
             base.Initialize();
         }
@@ -66,30 +65,26 @@ namespace BasicGUI
 
         void OnGUI()
         {
-            GUI.Init(spriteBatch);
+            GUI.Init(spriteBatch, mouseRect);
             GUI.Label(new Rectangle(10, 10, 0, 0), "Test");
             GUI.Label(new Rectangle(15, 200, 0, 0), "WOW !");
             GUI.Box(new Rectangle(500, 150, 100, 100), "BOOOX !");
 
-            if (GUI.Button(new Rectangle(100, 15, 100, 50), "Button !", mouseRect) && Mouse.GetState().LeftButton == ButtonState.Pressed && lastMouse.LeftButton != ButtonState.Pressed)
+            if (GUI.Button(new Rectangle(100, 15, 100, 50), "Button !"))
             {
                 you_win.Play();
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
-
-
+            
             GUI.Box(new Rectangle(200, 150, 200, 200), " ");
 
             GUI.Label(new Rectangle(235, 160, 0, 0), "Stuff Inside A Box");
 
-            if (GUI.Button(new Rectangle(250, 200, 100, 50), "In A Box !", mouseRect) && Mouse.GetState().LeftButton == ButtonState.Pressed && lastMouse.LeftButton != ButtonState.Pressed)
+            if (GUI.Button(new Rectangle(250, 200, 100, 50), "In A Box !"))
             {
                 you_win.Play();
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
-
-            lastMouse = Mouse.GetState();
-
         }
 
 
@@ -104,6 +99,8 @@ namespace BasicGUI
             OnGUI();
             spriteBatch.Draw(mouseTexture, mousePos, Color.White);
             spriteBatch.End();
+
+            GUISetup.LastMouseState = Mouse.GetState();
 
             base.Draw(gameTime);
         }

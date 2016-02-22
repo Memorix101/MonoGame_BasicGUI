@@ -10,9 +10,11 @@ namespace BasicGUI
     {
         private static ContentManager c;
         private static GraphicsDeviceManager g;
+        private static MouseState lastMouseState;
 
-        public static void Init(ContentManager _content, GraphicsDeviceManager _graphics, Game game)
+        public static void Init(ContentManager _content, GraphicsDeviceManager _graphics, Game game, MouseState mouse)
         {
+            lastMouseState = mouse;
             g = _graphics;
             c = _content;
             Mouse.WindowHandle = game.Window.Handle;
@@ -32,6 +34,18 @@ namespace BasicGUI
             get
             {
                 return g;
+            }
+        }
+
+        public static MouseState LastMouseState
+        {
+            set
+            {
+                lastMouseState = value;
+            }
+            get
+            {
+                return lastMouseState;
             }
         }
     }
