@@ -25,7 +25,7 @@ namespace BasicGUI
             batch = spriteBatch;
         }
 
-        public static void Text(Rectangle rect, string t)
+        public static void Label(Rectangle rect, string t)
         {
             Color color = Color.White;
             position = new Vector2(rect.X, rect.Y);

@@ -67,8 +67,8 @@ namespace BasicGUI
         void OnGUI()
         {
             GUI.Init(spriteBatch);
-            GUI.Text(new Rectangle(10, 10, 0, 0), "Test");
-            GUI.Text(new Rectangle(15, 200, 0, 0), "WOW !");
+            GUI.Label(new Rectangle(10, 10, 0, 0), "Test");
+            GUI.Label(new Rectangle(15, 200, 0, 0), "WOW !");
             GUI.Box(new Rectangle(500, 150, 100, 100), "BOOOX !");
 
             if (GUI.Button(new Rectangle(100, 15, 100, 50), "Button !", mouseRect) && Mouse.GetState().LeftButton == ButtonState.Pressed && lastMouse.LeftButton != ButtonState.Pressed)
