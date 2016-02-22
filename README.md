@@ -24,6 +24,7 @@ http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
 ```C#
         void OnGUI()
         {
+            GUI.Init(spriteBatch, mouseRect);
             GUILayout.BeginArea(new Rectangle(500, 0, 100, 50));
             GUILayout.Label("Test1");
             GUILayout.Label("Test2");
