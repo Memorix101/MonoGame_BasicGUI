@@ -77,6 +77,17 @@ namespace BasicGUI
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
 
+
+            GUI.Box(new Rectangle(200, 150, 200, 200), " ");
+
+            GUI.Label(new Rectangle(235, 160, 0, 0), "Stuff Inside A Box");
+
+            if (GUI.Button(new Rectangle(250, 200, 100, 50), "In A Box !", mouseRect) && Mouse.GetState().LeftButton == ButtonState.Pressed && lastMouse.LeftButton != ButtonState.Pressed)
+            {
+                you_win.Play();
+                Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
+            }
+
             lastMouse = Mouse.GetState();
 
         }
