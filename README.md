@@ -40,9 +40,7 @@ http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
 
             if (GUILayout.Button("Button2"))
             {
-                {
-                    sound2.Play();
-                }
+                sound2.Play();
             }
 
             GUILayout.EndArea();
