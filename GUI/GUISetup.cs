@@ -12,7 +12,7 @@ namespace BasicGUI
         private static GraphicsDeviceManager g;
         private static MouseState lastMouseState;
 
-        public static void Init(ContentManager _content, GraphicsDeviceManager _graphics, Game game, MouseState mouse)
+        public static void Init(ContentManager _content, GraphicsDeviceManager _graphics, MouseState mouse, Game game)
         {
             lastMouseState = mouse;
             g = _graphics;

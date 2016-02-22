@@ -33,7 +33,7 @@ namespace BasicGUI
 
         protected override void Initialize()
         {
-            GUISetup.Init(Content, graphics, this, mouseState);
+            GUISetup.Init(Content, graphics, mouseState, this);
             this.IsMouseVisible = false;
             base.Initialize();
         }
