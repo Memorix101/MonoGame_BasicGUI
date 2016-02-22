@@ -66,7 +66,7 @@ namespace BasicGUI
         void OnGUI()
         {
             GUI.Init(spriteBatch, mouseRect);
-            GUI.Label(new Rectangle(10, 10, 0, 0), "Test");
+            //   GUI.Label(new Rectangle(10, 10, 0, 0), "Test");
             GUI.Label(new Rectangle(15, 200, 0, 0), "WOW !");
             GUI.Box(new Rectangle(500, 150, 100, 100), "BOOOX !");
 
@@ -75,7 +75,7 @@ namespace BasicGUI
                 you_win.Play();
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
-            
+
             GUI.Box(new Rectangle(200, 150, 200, 200), " ");
 
             GUI.Label(new Rectangle(235, 160, 0, 0), "Stuff Inside A Box");
@@ -85,6 +85,37 @@ namespace BasicGUI
                 you_win.Play();
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
+
+
+            GUILayout.Init(spriteBatch, mouseRect);
+            GUILayout.BeginArea(new Rectangle(0, 0, 100, 50));
+            GUILayout.Label("Test1");
+            GUILayout.Label("Test2");
+            GUILayout.Label("Test3");
+            GUILayout.EndArea();
+
+            GUILayout.BeginArea(new Rectangle(500, 0, 100, 50));
+            GUILayout.Label("Test1");
+            GUILayout.Label("Test2");
+            GUILayout.EndArea();
+
+            GUILayout.BeginArea(new Rectangle(600, 0, 100, 50));
+
+            if (GUILayout.Button("Button1"))
+            {
+                you_win.Play();
+                Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
+            }
+
+            if (GUILayout.Button("Button2"))
+            {
+                {
+                    you_win.Play();
+                    Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
+                }
+            }
+
+            GUILayout.EndArea();
         }
 
 

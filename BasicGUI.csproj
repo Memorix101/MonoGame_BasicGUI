@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Game1.cs" />
     <Compile Include="GUI\GUI.cs" />
+    <Compile Include="GUI\GUILayout.cs" />
     <Compile Include="GUI\GUISetup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

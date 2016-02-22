@@ -13,7 +13,7 @@ namespace BasicGUI
          static Vector2 position;
          static SpriteBatch batch;
          static Rectangle r;
-        static Rectangle mouseRect;
+         static Rectangle mouseRect;
 
         static GUI()
         {
