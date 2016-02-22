@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 using System;
 
 namespace BasicGUI
@@ -17,10 +18,14 @@ namespace BasicGUI
         Vector2 mousePos;
         Texture2D mouseTexture;
 
+        SoundEffect you_win;
+
+        MouseState lastMouse;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
-            Setup.Init(Content, graphics);
+       
            //  graphics.PreferredBackBufferHeight = 720;
             //  graphics.PreferredBackBufferWidth = 1280;
 
@@ -29,8 +34,7 @@ namespace BasicGUI
 
         protected override void Initialize()
         {
-            Mouse.WindowHandle = Window.Handle;
-            Mouse.SetPosition(GraphicsDevice.Viewport.Width / 2 + Window.Position.X, GraphicsDevice.Viewport.Height / 2 + Window.Position.Y);
+            Setup.Init(Content, graphics, this);
             this.IsMouseVisible = false;
             base.Initialize();
         }
@@ -40,7 +44,8 @@ namespace BasicGUI
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            mouseTexture = Content.Load<Texture2D>("mouse_32");
+            mouseTexture = Content.Load<Texture2D>("cursor_glossy");
+            you_win = Content.Load<SoundEffect>("you_win");
 
             // TODO: use this.Content to load your game content here
         }
@@ -56,11 +61,6 @@ namespace BasicGUI
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-
-           // Console.WriteLine(mousePos + " - " + graphics.GraphicsDevice.Viewport.Width);
-
-
-
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -72,8 +72,14 @@ namespace BasicGUI
             GUI.Text(new Rectangle(0, 0, 0, 0), "Test");
             GUI.Text(new Rectangle(15, 200, 0, 0), "WOW !");
             GUI.Box(new Rectangle(500, 150, 100, 100), "BOOOX !");
-            if (GUI.Button(new Rectangle(100, 15, 100, 50), "Button !", mouseRect) && Mouse.GetState().LeftButton == ButtonState.Pressed)
-               Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
+
+            if (GUI.Button(new Rectangle(100, 15, 100, 50), "Button !", mouseRect) && Mouse.GetState().LeftButton == ButtonState.Pressed && lastMouse.LeftButton != ButtonState.Pressed)
+            {
+                you_win.Play();
+                Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
+            }
+
+            lastMouse = Mouse.GetState();
 
         }
 
@@ -85,7 +91,7 @@ namespace BasicGUI
             mouseRect = new Rectangle((int)mousePos.X, (int)mousePos.Y, 0, 0);
             mousePos = new Vector2(Mouse.GetState().X - Window.Position.X - mouseTexture.Width/2, Mouse.GetState().Y - Window.ClientBounds.Top);
 
-            spriteBatch.Begin();
+            spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, null);
             OnGUI(spriteBatch);
             spriteBatch.Draw(mouseTexture, mousePos, Color.White);
             spriteBatch.End();
