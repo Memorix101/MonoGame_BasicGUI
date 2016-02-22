@@ -88,24 +88,27 @@ namespace BasicGUI
 
 
             GUILayout.Init(spriteBatch, mouseRect);
-            GUILayout.BeginArea(new Rectangle(0, 0, 100, 50));
+            GUILayout.BeginArea(new Rectangle(0, 0, 100, 20));
             GUILayout.Label("Test1");
             GUILayout.Label("Test2");
             GUILayout.Label("Test3");
             GUILayout.EndArea();
 
-            GUILayout.BeginArea(new Rectangle(500, 0, 100, 50));
+            GUILayout.BeginArea(new Rectangle(500, 0, 100, 20));
             GUILayout.Label("Test1");
             GUILayout.Label("Test2");
             GUILayout.EndArea();
 
-            GUILayout.BeginArea(new Rectangle(600, 0, 100, 50));
+            GUILayout.BeginArea(new Rectangle(600, 5, 100, 50));
+
 
             if (GUILayout.Button("Button1"))
             {
                 you_win.Play();
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
+
+            GUILayout.Space(1);
 
             if (GUILayout.Button("Button2"))
             {
