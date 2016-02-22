@@ -34,6 +34,7 @@ namespace BasicGUI
             //  texture = Setup.ContentDevice.Load<Texture2D>("bar");
         }
 
+
         public static void Init(SpriteBatch spriteBatch, Rectangle _mouseRect)
         {
             mouseRect = _mouseRect;
@@ -86,7 +87,7 @@ namespace BasicGUI
             text = t;
             
             position = new Vector2(AreaStack.Peek().rect.Location.X + AreaStack.Peek().rect.Width / 2f - font.MeasureString(t).X / 2f,
-            AreaStack.Peek().rect.Location.Y + _offset / 2f - font.MeasureString(t).Y / 2f + AreaStack.Peek().elements * _offset);
+            AreaStack.Peek().rect.Location.Y + size / 2f - font.MeasureString(t).Y / 2f + AreaStack.Peek().elements * _offset);
 
             Rectangle rectPos = new Rectangle(AreaStack.Peek().rect.Location.X, AreaStack.Peek().rect.Location.Y + AreaStack.Peek().elements * (int)_offset,
             AreaStack.Peek().rect.Width, size);
@@ -108,7 +109,7 @@ namespace BasicGUI
             text = t;
 
             position = new Vector2(AreaStack.Peek().rect.Location.X + AreaStack.Peek().rect.Width / 2f - font.MeasureString(t).X / 2f,
-                 AreaStack.Peek().rect.Location.Y + _offset / 2f - font.MeasureString(t).Y / 2f + AreaStack.Peek().elements * _offset);
+                 AreaStack.Peek().rect.Location.Y +  size / 2f - font.MeasureString(t).Y / 2f + AreaStack.Peek().elements * _offset);
 
             Rectangle rectPos = new Rectangle(AreaStack.Peek().rect.Location.X, AreaStack.Peek().rect.Location.Y + AreaStack.Peek().elements * (int)_offset, 
                 AreaStack.Peek().rect.Width, size);

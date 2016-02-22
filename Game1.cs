@@ -66,7 +66,7 @@ namespace BasicGUI
         void OnGUI()
         {
             GUI.Init(spriteBatch, mouseRect);
-            //   GUI.Label(new Rectangle(10, 10, 0, 0), "Test");
+            GUI.Label(new Rectangle(10, 10, 0, 0), "Test");
             GUI.Label(new Rectangle(15, 200, 0, 0), "WOW !");
             GUI.Box(new Rectangle(500, 150, 100, 100), "BOOOX !");
 
@@ -86,9 +86,8 @@ namespace BasicGUI
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
 
-
-            GUILayout.Init(spriteBatch, mouseRect);
-            GUILayout.BeginArea(new Rectangle(0, 0, 100, 20));
+            
+            GUILayout.BeginArea(new Rectangle(250, 0, 100, 20));
             GUILayout.Label("Test1");
             GUILayout.Label("Test2");
             GUILayout.Label("Test3");

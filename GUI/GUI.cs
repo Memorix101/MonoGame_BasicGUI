@@ -25,6 +25,8 @@ namespace BasicGUI
         {
             mouseRect = _mouseRect;
             batch = spriteBatch;
+
+            GUILayout.Init(spriteBatch, _mouseRect);
         }
 
         public static void Label(Rectangle rect, string t)
