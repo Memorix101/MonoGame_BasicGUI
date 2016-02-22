@@ -23,5 +23,5 @@ http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
 Art by Kenney:
 http://opengameart.org/content/ui-pack
 
-Font by Ubnutu:
+Font by Ubuntu:
 http://font.ubuntu.com/
