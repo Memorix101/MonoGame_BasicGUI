@@ -14,8 +14,8 @@ http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
 
             if (GUI.Button(new Rectangle(100, 15, 100, 50), "Button !"))
             {
-                you_win.Play();
-                Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
+                sound.Play();
+                Console.WriteLine("Works!");
             }
        }
 ```
