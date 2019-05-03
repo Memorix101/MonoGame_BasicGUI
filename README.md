@@ -46,4 +46,5 @@ Rebuilding the [Legacy GUI from Unity3D](http://docs.unity3d.com/462/Documentati
        }
 ```
 Art by [Kenney](http://opengameart.org/content/ui-pack)
+<br/>
 Font by [Ubuntu](http://font.ubuntu.com/)
