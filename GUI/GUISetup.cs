@@ -18,7 +18,7 @@ namespace BasicGUI
             g = _graphics;
             c = _content;
             Mouse.WindowHandle = game.Window.Handle;
-            Mouse.SetPosition(_graphics.GraphicsDevice.Viewport.Width / 2 - game.Window.Position.X / 2, _graphics.GraphicsDevice.Viewport.Height / 2 - game.Window.Position.Y / 2);
+            //Mouse.SetPosition(_graphics.GraphicsDevice.Viewport.Width / 2 - game.Window.Position.X / 2, _graphics.GraphicsDevice.Viewport.Height / 2 - game.Window.Position.Y / 2);
         }
 
         public static ContentManager ContentDevice

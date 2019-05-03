@@ -20,9 +20,8 @@ namespace BasicGUI
         static string text;
         static Vector2 position;
         static SpriteBatch batch;
-        static Rectangle r;
         static Rectangle mouseRect;
-        //   static float _offset;
+        //static float _offset;
         static float _offset = 20; //default height 20 //AreaStack.Peek().rect.Height
         static int size = 30;
 
@@ -33,7 +32,6 @@ namespace BasicGUI
             font = GUISetup.ContentDevice.Load<SpriteFont>("Ubuntu-B");
             //  texture = Setup.ContentDevice.Load<Texture2D>("bar");
         }
-
 
         public static void Init(SpriteBatch spriteBatch, Rectangle _mouseRect)
         {
@@ -77,7 +75,7 @@ namespace BasicGUI
             }
 
             text = " ";
-         //   batch.DrawString(font, text, position, color);
+            //batch.DrawString(font, text, position, color);
         }
 
         public static void Box(string t)
@@ -85,7 +83,7 @@ namespace BasicGUI
             Color color = Color.White;
             Texture2D texture = GUISetup.ContentDevice.Load<Texture2D>("blue_panel");
             text = t;
-            
+
             position = new Vector2(AreaStack.Peek().rect.Location.X + AreaStack.Peek().rect.Width / 2f - font.MeasureString(t).X / 2f,
             AreaStack.Peek().rect.Location.Y + size / 2f - font.MeasureString(t).Y / 2f + AreaStack.Peek().elements * _offset);
 
@@ -109,9 +107,9 @@ namespace BasicGUI
             text = t;
 
             position = new Vector2(AreaStack.Peek().rect.Location.X + AreaStack.Peek().rect.Width / 2f - font.MeasureString(t).X / 2f,
-                 AreaStack.Peek().rect.Location.Y +  size / 2f - font.MeasureString(t).Y / 2f + AreaStack.Peek().elements * _offset);
+                 AreaStack.Peek().rect.Location.Y + size / 2f - font.MeasureString(t).Y / 2f + AreaStack.Peek().elements * _offset);
 
-            Rectangle rectPos = new Rectangle(AreaStack.Peek().rect.Location.X, AreaStack.Peek().rect.Location.Y + AreaStack.Peek().elements * (int)_offset, 
+            Rectangle rectPos = new Rectangle(AreaStack.Peek().rect.Location.X, AreaStack.Peek().rect.Location.Y + AreaStack.Peek().elements * (int)_offset,
                 AreaStack.Peek().rect.Width, size);
 
             AreaLayout layout = AreaStack.Pop();

@@ -18,7 +18,7 @@ namespace BasicGUI
         Vector2 mousePos;
         Texture2D mouseTexture;
         MouseState mouseState;
-
+   
         SoundEffect you_win;
 
         public Game1()
@@ -58,8 +58,6 @@ namespace BasicGUI
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
@@ -85,7 +83,6 @@ namespace BasicGUI
                 you_win.Play();
                 Console.WriteLine("YEEEEEEEEEEEEAAAAH!");
             }
-
             
             GUILayout.BeginArea(new Rectangle(250, 0, 100, 20));
             GUILayout.Label("Test1");
@@ -120,13 +117,12 @@ namespace BasicGUI
             GUILayout.EndArea();
         }
 
-
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
+            mousePos = new Vector2(Mouse.GetState().X - mouseTexture.Width / 2, Mouse.GetState().Y);
             mouseRect = new Rectangle((int)mousePos.X, (int)mousePos.Y, 0, 0);
-            mousePos = new Vector2(Mouse.GetState().X - Window.Position.X - mouseTexture.Width/2, Mouse.GetState().Y - Window.ClientBounds.Top);
 
             spriteBatch.Begin(SpriteSortMode.Deferred, null, SamplerState.PointClamp, null, null, null, null);
             OnGUI();

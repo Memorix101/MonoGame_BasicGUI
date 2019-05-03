@@ -1,8 +1,7 @@
 # MonoGame_BasicGUI
-Rebuilding the Legacy GUI from Unity3D for MonoGame
-http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
+Rebuilding the [Legacy GUI from Unity3D](http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html) for MonoGame
 
-![win1](https://cloud.githubusercontent.com/assets/1466920/13226860/f7430764-d993-11e5-8687-4e2555abc24f.PNG)
+![](https://cloud.githubusercontent.com/assets/1466920/13226860/f7430764-d993-11e5-8687-4e2555abc24f.PNG)
 
 ```C#
         void OnGUI()
@@ -19,7 +18,6 @@ http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
             }
        }
 ```
-
 
 ```C#
         void OnGUI()
@@ -47,10 +45,5 @@ http://docs.unity3d.com/462/Documentation/Manual/gui-Basics.html
             GUILayout.EndArea();
        }
 ```
-
-
-Art by Kenney:
-http://opengameart.org/content/ui-pack
-
-Font by Ubuntu:
-http://font.ubuntu.com/
+Art by [Kenney](http://opengameart.org/content/ui-pack)
+Font by [Ubuntu](http://font.ubuntu.com/)
